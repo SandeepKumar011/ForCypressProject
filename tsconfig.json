@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "types": ["cypress", "@badeball/cypress-cucumber-preprocessor","node", "cucumber"]
+    "types": ["cypress", "@badeball/cypress-cucumber-preprocessor","node", "cucumber", "cypress-real-events"]
   },
   "include": ["cypress/**/*.ts", "cypress/e2e/**/*.ts"]
 }

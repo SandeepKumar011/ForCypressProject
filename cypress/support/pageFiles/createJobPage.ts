@@ -1,3 +1,6 @@
+import { faker } from '@faker-js/faker';
+const fakeName = faker.person.fullName();
+
 class LoginPage {
   private jobTitle = "input[placeholder='Enter the job title with relevancy']";
   private jobId = "input[placeholder='JD-001']";
@@ -18,14 +21,22 @@ class LoginPage {
   }
 
   enterJobDesc() {
-   cy.log('entering data');
-   cy.get('.ck-content[contenteditable=true]')
-   .clear({ force: true }) // clears content
-  .type('Typing some stuff', { force: true });
+   cy.log('ENTERING JOB DESCRIPTION PLEASE WAIT');
+   cy.wait(1000);
+  cy.get('.ck-content[contenteditable=true]')
+  .realClick()                        
+
+// type new text
+cy.get('.ck-content[contenteditable=true]')
+  .realType(fakeName)
+
+// verify
+cy.get('.ck-content[contenteditable=true] p')
+  .should('have.text', fakeName)
 };
 
   submitJob(){
-    cy.xpath(this.sendButton,{ timeout: 25000 }).click();
+    cy.xpath(this.sendButton,{ timeout: 1000 }).click();
   }
 
 
@@ -37,7 +48,7 @@ class LoginPage {
    cy.get('button').contains('Write your own').click();
   }
 
-  enterJobId(jobId: string) {
+  enterJobId(jobId: any) {
     cy.get(this.jobId).type(jobId);
   }
 
