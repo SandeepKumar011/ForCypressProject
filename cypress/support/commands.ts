@@ -32,6 +32,8 @@ declare global {
        * @example cy.isNotVisible('selector')
        */
       isNotVisible(selector: string): Chainable<Element>;
+
+       typeInCkEditor(text: string): Chainable<void>;
     }
   }
 }
