@@ -1,0 +1,26 @@
+{
+  "name": "practicecypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runwithHead": "npx cypress run --browser chrome --headed --spec \"cypress/e2e/features/login.feature\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.6",
+    "@cucumber/cucumber": "^12.2.0",
+    "@cypress/webpack-preprocessor": "^7.0.1",
+    "@types/cucumber": "^6.0.1",
+    "@types/node": "^24.5.2",
+    "cypress": "^15.2.0",
+    "cypress-real-events": "^1.15.0",
+    "cypress-xpath": "^2.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}

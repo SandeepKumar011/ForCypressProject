@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["cypress", "@badeball/cypress-cucumber-preprocessor","node", "cucumber"]
+  },
+  "include": ["cypress/**/*.ts", "cypress/e2e/**/*.ts"]
+}
