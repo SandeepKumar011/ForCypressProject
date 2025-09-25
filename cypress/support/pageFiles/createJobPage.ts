@@ -22,7 +22,6 @@ class LoginPage {
    cy.get('.ck-content[contenteditable=true]')
    .clear({ force: true }) // clears content
   .type('Typing some stuff', { force: true });
-
 };
 
   submitJob(){

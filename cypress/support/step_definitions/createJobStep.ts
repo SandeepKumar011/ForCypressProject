@@ -11,11 +11,9 @@ When("user enter the job infomation and submit", () => {
      createjobPage.enterJobId('21');
      createjobPage.selectLocation();
      createjobPage.enterOpeningNumber(7);
-     cy.log('entering the text field555');
+     cy.log('entering data');
      createjobPage.enterJobDesc();
-     //enter text
-     //enter text
-     cy.log('entering the text field444');
+     cy.log('entering data222');
      createjobPage.submitJob();
 
 });
