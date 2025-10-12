@@ -6,8 +6,8 @@ Given("I open the login page", () => {
 });
 
 When("user enter the credentials for login", () => {
-	LoginPage.enterUsername("jaimin.shah@avistatech.net");
-  LoginPage.enterPassword("Bmc@1234");
+	LoginPage.enterUsername("avistaadmin@talentin.ai");
+  LoginPage.enterPassword("Avista@1234");
   LoginPage.clickLogin();
 
 });
