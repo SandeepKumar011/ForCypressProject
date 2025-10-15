@@ -19,6 +19,25 @@ class ApplyJobPage {
     cy.xpath("(//div[@class='flex flex-col']//span)[1]").click();
   }
 
+  checkingActiveInactive(){
+     cy.log('Checking for the active');
+      cy.wait(2000);
+   cy.get('input.sr-only.peer').then(($input) => {
+  if (!$input.is(':checked')) {
+    // If inactive, click toggle switch
+    cy.xpath("//input[@class='sr-only peer']/following-sibling::div",{ timeout: 5000 })
+      .click({ force: true });
+
+    // Click Confirm button
+    cy.xpath("//button[normalize-space(text())='Confirm']",{ timeout: 7000 })
+      .click({ force: true });
+  }
+  else{
+     cy.log('Job is already active');
+  }
+});
+  }
+
   openUploadImage(){
      cy.xpath("//span[normalize-space(text())='Upload Resumes']").click();
   }

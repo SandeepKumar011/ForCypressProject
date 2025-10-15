@@ -4,7 +4,7 @@ const fakeName = faker.person.fullName();
 class LoginPage {
   private jobTitle = "input[placeholder='Enter the job title with relevancy']";
   private jobId = "input[placeholder='JD-001']";
-  private openingNumber = "input[placeholder='2']";
+  private openingNumber = "input[placeholder='1']";
   private jobDescription = "//p[@data-placeholder='Enter your JD here...']";
   private sendButton="//img[@alt='Send-Icon']"
 
