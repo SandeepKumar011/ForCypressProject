@@ -11,12 +11,14 @@ class ApplyJobPage {
     cy.get(this.jobIcon).click();
   }
 
-   searchJobName(jobName: string) {
-    cy.get(this.searchField).type(jobName);
-  }
+  searchJobName(jobName: string) {
+  cy.get(this.searchField).should('be.visible').type(jobName);
+}
 
   selectSearchedJob() {
-    cy.xpath("(//div[@class='flex flex-col']//span)[1]").click();
+     cy.xpath("(//div[@class='flex flex-col']//span)[1]", { timeout: 7000 })
+    .should('be.visible')
+    .click();
   }
 
   checkingActiveInactive(){
