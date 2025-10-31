@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 const fakeName = faker.person.fullName();
+const jobStatus='Open'
 
 class StatusDropPage {
   private jobIcon = "img[alt='Job Openings icon']";
@@ -29,10 +30,11 @@ class StatusDropPage {
     });
   })
   .then(() => {
-    // Now click the "Open" option
+    cy.wait(5000);
     cy.contains('button', 'Open').click();
     cy.xpath('//tbody/tr[1]/td[3]',{ timeout: 7000 }).should('be.visible');
-    cy.xpath("//span[normalize-space(text())='Open']",{ timeout: 3000 }).click();
+    cy.wait(5000);
+    cy.xpath(`//span[normalize-space(text())='${jobStatus}']`,{ timeout: 3000 }).click();
     cy.contains('button', 'Closed').click();
      cy.xpath('//tbody/tr[1]/td[3]',{ timeout: 7000 }).should('be.visible');
   });

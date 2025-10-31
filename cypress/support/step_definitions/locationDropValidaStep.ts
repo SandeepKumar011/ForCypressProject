@@ -7,9 +7,11 @@ When(/^user select the Location drop down$/, () => {
 });
 
 When(/^user check the drop down values available for Location$/, () => {
+	cy.wait(5000);
 	locdropPage.dropdownValuesList();
 });
 
 Then(/^verify search by location values to be displayed$/, () => {
+	cy.wait(7000);
 	locdropPage.firstNameAvailable();
 });

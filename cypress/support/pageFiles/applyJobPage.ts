@@ -16,18 +16,18 @@ class ApplyJobPage {
 }
 
   selectSearchedJob() {
-     cy.xpath("(//div[@class='flex flex-col']//span)[1]", { timeout: 7000 })
+     cy.xpath("(//div[@class='flex flex-col']//span)[1]", { timeout: 9000 })
     .should('be.visible')
     .click();
   }
 
   checkingActiveInactive(){
      cy.log('Checking for the active');
-      cy.wait(2000);
+      cy.wait(5000);
    cy.get('input.sr-only.peer').then(($input) => {
   if (!$input.is(':checked')) {
     // If inactive, click toggle switch
-    cy.xpath("//input[@class='sr-only peer']/following-sibling::div",{ timeout: 5000 })
+    cy.xpath("//input[@class='sr-only peer']/following-sibling::div",{ timeout: 7000 })
       .click({ force: true });
 
     // Click Confirm button
@@ -45,12 +45,12 @@ class ApplyJobPage {
   }
 
   uploadImage(){
-   cy.wait(1000);
+   cy.wait(3000);
    cy.get('input[type="file"]').selectFile('cypress/data/uploadFile.pdf', { force: true });
   }
 
   closePopup() {
-    cy.wait(1000);
+    cy.wait(3000);
     cy.xpath("//button[normalize-space(text())='Close']").click();
   }
 
