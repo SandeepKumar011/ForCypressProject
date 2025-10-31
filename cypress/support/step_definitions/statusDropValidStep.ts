@@ -12,12 +12,15 @@ When(/^user should be redirected to the job page$/, () => {
 });
 
 When(/^user select the status drop down$/, () => {
+	cy.wait(5000);
 	statusdropPage.openStatusDrop();
 });
 
 When(/^user check the drop down values available$/, () => {
 	cy.log('need to check drop down values');
+	cy.wait(5000);
     statusdropPage.dropdownValuesList();
+	cy.wait(7000);
     statusdropPage.firstNameAvailable();
 
 });
