@@ -1,19 +1,19 @@
 import { faker } from '@faker-js/faker';
 const fakeName = faker.person.fullName();
 
-class CondidateSearchPage {
+class JobCondidatePage {
   private condidateIcon = "img[alt='Candidates icon']";
 
   clickOnjobIcon() {
     cy.get(this.condidateIcon).click();
   }
 
-  openStatusDrop() {
-    cy.xpath("//span[@class='text-[14px] truncate']",{ timeout: 3000 }).click();
+  openJobDrop() {
+    cy.xpath("//span[@class='truncate max-w-[170px] block cursor-pointer']",{ timeout: 3000 }).click();
   }
 
-  selectShortlisted() {
-    cy.xpath("//span[contains(text(),'Shortlisted')]").click();
+  selectAllJobs() {
+    cy.xpath("//button[contains(text(),'All Jobs')]",{ timeout: 3000 }).click();
   }
 
    selectSearchButton() {
@@ -25,6 +25,7 @@ class CondidateSearchPage {
   }
 
   listValidation() {
+    cy.wait(3000);
  cy.xpath('//tbody/tr[1]/td[3]', { timeout: 3000 })
   .then(($el) => {
     if ($el.is(':visible')) {
@@ -40,4 +41,4 @@ class CondidateSearchPage {
   }
 }
 
-export default new CondidateSearchPage();
+export default new JobCondidatePage();
