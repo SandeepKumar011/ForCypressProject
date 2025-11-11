@@ -39,6 +39,16 @@ class JobCondidatePage {
   condidateUrlValidation() {
    cy.url().should('include', 'candidates');
   }
+
+  //==============================location=================================//
+  openLocDrop() {
+    cy.wait(5000);
+    cy.xpath("//span[normalize-space(text())='Match %']",{ timeout: 7000 }).click();
+  }
+
+  selectLocation() {
+    cy.xpath("//button[contains(text(),'Location')]",{ timeout: 3000 }).click();
+  }
 }
 
 export default new JobCondidatePage();
